@@ -1,4 +1,5 @@
   class LRUCache
+    attr_reader :cache_size
     def initialize(cache_size)
       @cache = []
       @cache_size = cache_size
