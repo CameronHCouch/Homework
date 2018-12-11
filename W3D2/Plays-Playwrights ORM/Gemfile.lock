@@ -1,0 +1,11 @@
+GEM
+  remote: https://github.com/larskanis/sqlite3-ruby/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+
+BUNDLED WITH
+   1.17.1
