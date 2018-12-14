@@ -107,14 +107,33 @@ class MetaCorgiSnacks
   def initialize(snack_box, box_id)
     @snack_box = snack_box
     @box_id = box_id
+    snack_box.methods.grep(/^get_(.*)_info$/) { MetaCorgiSnacks.define_snack $1 }
+    # (.*) tells grep to capture any chars that come between get_ and _info
   end
 
-  def method_missing(name, *args)
-    # Your code goes here...
-  end
+  # def method_missing(name, *args)
+  #   info = @snack_box.send("get_#{name}_info", @box_id)
+  #   tastiness = @snack_box.send("get_#{name}_tastiness", @box_id)
+  #   name = "#{name.to_s.split('_').map(&:capitalize).join(' ')}"
+  #   result = "#{name}: #{info}: #{tastiness} "
+  #   tastiness > 30 ? "* #{result}" : result
+  # end
+
+
+    # name is method called on snack_box/corgi.
+    # args is box_id
+    # we use interpolation to #send methods get_X_info and get_X_tastiness based on box_id
+    # ternary statement: if tastiness > 30, return * before result
+    # else simply return result
 
 
   def self.define_snack(name)
-    # Your code goes here...
+    define_method(name) do
+      info = @snack_box.send("get_#{name}_info", @box_id)
+      tastiness = @snack_box.send("get_#{name}_tastiness", @box_id)
+      display_name = "#{name.to_s.split('_').map(&:capitalize).join(' ')}"
+      result = "#{display_name}: #{info}: #{tastiness} "
+      tastiness > 30 ? "* #{result}" : result
+    end
   end
 end
