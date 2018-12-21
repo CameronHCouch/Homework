@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #cc99ff;
+    font-size: 30px;
+ }
+
+ header {
+    display: flex;
+    justify-content: space-between;
+
+ }
+ .logged_in {
+    display: flex;
+ }
+
+ header form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+ }
+ input[type] {
+    background-color: #cc99ff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    margin: 0;
+ }
+
+ header input[type=submit] {
+     border-radius: 8px;
+     border: 0;
+     max-height: 20px;
+ }
+
+ body {
+     background-color: gainsboro;
+ }
+
+ header a, a:visited {
+    text-decoration: none;
+    color: inherit;
+ }
+
+ .button a {
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   text-decoration: none;
+   background-color: #cc99ff;
+   padding: 5px;
+   border-radius: 8px;
+   border: 3px solid white;
+ }
+
+ h2, h3, label {
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }

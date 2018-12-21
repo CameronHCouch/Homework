@@ -1,0 +1,10 @@
+<h3> Edit this delicious band: </h3>
+
+<form action="<%= band_url %>" method="POST">
+    <%= auth_token %>
+    <input type="hidden" action="_method" value="PATCH">
+    <label for="band_name"><%= @band.name %>? Change their name! </label>
+    <input type="text" id="band_name" name="band[name]">
+    <br>
+    <input type="submit" value="Yeah that's a better name!">
+</form>

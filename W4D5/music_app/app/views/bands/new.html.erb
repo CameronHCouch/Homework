@@ -1,0 +1,9 @@
+<h3> Gimme a delicious band: </h3>
+
+<form action="<%= bands_url %>" method="POST">
+    <%= auth_token %>
+    <label for="band_name">What's that one cool band's name again? </label>
+    <input type="text" id="band_name" name="band[name]">
+    <br>
+    <input type="submit" value="Oh yeah that's their name!">
+</form>
