@@ -5,5 +5,6 @@ class CreatePeopleTable < ActiveRecord::Migration[5.2]
       t.integer :house_id, null: false
       t.timestamps
     end
+    add_index :people, :house_id
   end
 end
