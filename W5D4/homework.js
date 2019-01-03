@@ -50,3 +50,15 @@ const sumOfNPrimes = (num) => {
   }
   return sum;
 };
+
+//PHASE TWO
+
+const titleize = (array, printCallback) => {
+  let formalized = array.map(x => `Mx. ${x} Jingleheimer Schmidt`);
+  return printCallback(formalized);
+};
+
+const printCallback = (array) => {
+  array.forEach(x => console.log(x));
+};
+
